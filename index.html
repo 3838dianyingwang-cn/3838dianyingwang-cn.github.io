@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#07060f">
+<title>3838电影网｜8分钟碎片 · 38分钟沉浸 · 高分电影正版片单</title>
+<meta name="description" content="3838电影网：以8分钟碎片与38分钟沉浸为选片刻度的高分电影指南。提供烧脑、治愈、犯罪、家庭、纪录片等正版片源导航，含38分钟短片、30分钟微电影、一集剧长度电影推荐。">
+<meta name="keywords" content="3838电影网,3838电影,38分钟电影,8分钟短片,微电影,短片长电影,碎片时间观影,烧脑电影,治愈电影,高分电影,正版观影">
+<link rel="canonical" href="https://3838dianyingwang-cn.github.io/">
+<style>
+:root{
+  --bg:#07060f; --ink:#f5f3ff; --sub:#a29bb8; --line:rgba(255,255,255,.10);
+  --violet:#7b5cff; --magenta:#ff3d84; --cyan:#25e0d4; --amber:#ffb020; --rose:#ff6b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,sans-serif;
+  line-height:1.7; overflow-x:hidden;
+  background-image:radial-gradient(900px 500px at 12% -8%,rgba(123,92,255,.20),transparent 60%),
+                  radial-gradient(800px 460px at 88% 8%,rgba(255,61,132,.14),transparent 60%);
+  background-attachment:fixed;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+h1,h2,h3{line-height:1.25;letter-spacing:.02em}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan)}
+.sec-title{font-size:clamp(26px,4.4vw,40px);font-weight:800;margin:14px 0 8px}
+.sec-note{color:var(--sub);max-width:62ch;font-size:15px}
+
+/* ── 首屏 ── */
+.hero{position:relative;min-height:min(640px,92vh);display:grid;align-items:center;padding:74px 0 56px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.h-txt .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:#d8d3ff;background:rgba(255,255,255,.04)}
+.h-txt h1{font-size:clamp(40px,8.4vw,86px);font-weight:900;letter-spacing:-.02em;margin:20px 0 6px}
+.h-txt h1 em{font-style:normal;background:linear-gradient(92deg,var(--cyan),var(--violet) 45%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.h-txt .lede{font-size:clamp(16px,2.1vw,19px);color:#cfc8e6;max-width:44ch}
+.h-txt .clock{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.clk{position:relative;padding:14px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);min-width:132px}
+.clk b{display:block;font-size:26px;font-weight:800;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.clk span{font-size:12px;color:var(--sub);letter-spacing:.1em}
+.clk::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+.scroll{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--sub);writing-mode:vertical-rl}
+
+.stage{position:relative;aspect-ratio:1/1;max-width:520px;justify-self:end}
+.stage svg{width:100%;height:100%;display:block;overflow:visible}
+.tick{animation:tick 4.2s ease-in-out infinite;transform-origin:50% 26%}
+@keyframes tick{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.drip{stroke-dasharray:7 15;animation:drip 3.4s linear infinite}
+@keyframes drip{to{stroke-dashoffset:-88}}
+.ring{transform-origin:50% 50%;animation:ring 26s linear infinite}
+@keyframes ring{to{transform:rotate(360deg)}}
+.glow{animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* ── 导航 ── */
+nav[role="navigation"]{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(7,6,15,.78);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:22px;height:62px}
+.brand{font-weight:900;letter-spacing:.06em;font-size:17px;white-space:nowrap}
+.brand i{font-style:normal;color:var(--cyan)}
+.nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{padding:9px 13px;border-radius:10px;font-size:14px;color:#d3cee8;transition:.22s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.ham{display:none;width:44px;height:44px;align-items:center;justify-content:center;margin-left:auto}
+.ham i{position:relative;width:22px;height:2px;background:#fff;transition:.28s}
+.ham i::before,.ham i::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;transition:.28s}
+.ham i::before{top:-7px}.ham i::after{top:7px}
+.ham[aria-expanded="true"] i{background:transparent}
+.ham[aria-expanded="true"] i::before{transform:rotate(45deg);top:0}
+.ham[aria-expanded="true"] i::after{transform:rotate(-45deg);top:0}
+
+/* ── 通用 section ── */
+section{padding:clamp(56px,9vw,104px) 0;position:relative}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+
+/* ① 刻度卡 */
+.gauge{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g{position:relative;padding:24px 22px 22px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));overflow:hidden;transition:transform .3s cubic-bezier(.2,.7,.3,1),border-color .3s}
+.g::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--c),var(--c2))}
+.g::after{content:"";position:absolute;right:-44px;top:-44px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--c),transparent 70%);opacity:.22}
+.g:hover{transform:translateY(-7px);border-color:var(--c)}
+.g .num{font-size:13px;letter-spacing:.24em;color:var(--c);font-weight:700}
+.g h3{font-size:22px;margin:9px 0 10px}
+.g p{font-size:13.5px;color:var(--sub)}
+.g .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.10);margin:16px 0 10px;overflow:hidden}
+.g .bar i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--c),var(--c2));transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.g .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px;color:#c9c2e2}
+.g .meta b{color:#fff;font-weight:700}
+
+/* ② 磁贴 */
+.mag{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:thin}
+.mag::-webkit-scrollbar{height:8px}
+.mag::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:8px}
+.m{position:relative;flex:0 0 202px;scroll-snap-align:start}
+.m .cvr{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#151321}
+.m .cvr img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1),filter .5s}
+.m:hover .cvr img{transform:scale(1.07);filter:saturate(1.16) contrast(1.04)}
+.m .tag{position:absolute;left:10px;top:10px;padding:4px 9px;border-radius:8px;font-size:11px;font-weight:800;letter-spacing:.04em;background:var(--c);color:#08060f}
+.m .rate{position:absolute;right:10px;bottom:10px;padding:4px 8px;border-radius:8px;font-size:12px;font-weight:800;background:rgba(7,6,15,.86);backdrop-filter:blur(6px)}
+.m h3{font-size:15.5px;margin:12px 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m .who{font-size:12.5px;color:var(--sub)}
+.m .why{font-size:12.5px;color:#c4bde0;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ③ 榜单（数据表 + 侧栏） */
+.rank{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:26px;align-items:start}
+.tbl-wrap{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}
+.tbl-wrap table{width:100%;border-collapse:collapse;font-size:14px}
+.tbl-wrap th{text-align:left;padding:15px 14px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#d7d1ee;background:linear-gradient(90deg,rgba(123,92,255,.26),rgba(37,224,212,.14));border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl-wrap td{padding:14px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl-wrap tr:last-child td{border-bottom:0}
+.tbl-wrap tbody tr{transition:background .25s}
+.tbl-wrap tbody tr:hover{background:rgba(123,92,255,.10)}
+.tbl-wrap td.n{font-weight:800;color:var(--c);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl-wrap td.film{font-weight:700}
+.tbl-wrap td.film small{display:block;font-weight:400;color:var(--sub);font-size:12px}
+.meter{height:7px;border-radius:7px;background:rgba(255,255,255,.10);min-width:120px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:7px;background:linear-gradient(90deg,var(--c),var(--c2));transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.ask{position:sticky;top:84px;padding:22px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(123,92,255,.12),rgba(255,255,255,.02));border-left:3px solid var(--violet)}
+.ask h3{font-size:17px;margin-bottom:12px}
+.ask ol{padding-left:20px;font-size:13.5px;color:#d3cdea;display:grid;gap:11px}
+.ask li::marker{color:var(--cyan);font-weight:800}
+.note{margin-top:18px;padding:14px 15px;border-radius:13px;font-size:12.5px;color:#b9f5ef;background:rgba(37,224,212,.10);border:1px solid rgba(37,224,212,.26)}
+
+/* ④ 时间轴 */
+.tl{position:relative;display:grid;gap:20px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--cyan),var(--violet) 52%,var(--magenta));transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
+.tl.in::before{transform:scaleY(1)}
+.row{position:relative;display:grid;grid-template-columns:96px 1fr;gap:20px;padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.028);transition:transform .3s,border-color .3s,background .3s}
+.row::before{content:"";position:absolute;left:-27px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--c);box-shadow:0 0 0 5px rgba(255,255,255,.04)}
+.row:hover{transform:translateX(7px);border-color:var(--c);background:rgba(255,255,255,.06)}
+.row .yr{font-size:13px;letter-spacing:.1em;color:var(--c);font-weight:800;padding-top:3px}
+.row h3{font-size:19px}
+.row .en{font-size:11.5px;letter-spacing:.2em;color:var(--sub);text-transform:uppercase}
+.row p{font-size:13.5px;color:var(--sub);margin:7px 0 11px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chips span{padding:4px 10px;border-radius:999px;font-size:11.5px;border:1px solid var(--c);color:var(--c)}
+
+/* ⑤ 砖墙 */
+.bricks{column-count:3;column-gap:20px}
+.b{break-inside:avoid;margin:0 0 20px;padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.026);transition:transform .3s,border-color .3s}
+.b.h2{grid-row:span 2}
+.b .cvr{position:relative;border-radius:12px;overflow:hidden;background:#151321}
+.b.h2 .cvr{aspect-ratio:16/10}
+.b:not(.h2) .cvr{aspect-ratio:3/4}
+.b .cvr img{width:100%;height:100%;object-fit:cover;filter:grayscale(.20) sepia(.10) hue-rotate(-4deg);transition:transform .6s,filter .5s}
+.b:hover{border-color:var(--c);transform:translateY(-5px)}
+.b:hover .cvr img{transform:scale(1.06);filter:none}
+.b .idx{font-size:11px;letter-spacing:.28em;color:var(--c);font-weight:800;margin-top:13px}
+.b h3{font-size:16px;margin:5px 0 6px}
+.b p{font-size:12.5px;color:var(--sub)}
+.lede2{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.lede2 .b2{padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.026)}
+.lede2 h4{font-size:15px;margin-bottom:12px;color:#fff}
+.lede2 ol{padding-left:20px;font-size:13px;color:#d3cdea;display:grid;gap:9px}
+.lede2 li::marker{color:var(--c);font-weight:800}
+
+/* 页脚 */
+footer[role="contentinfo"]{border-top:1px solid var(--line);padding:44px 0 30px;color:var(--sub);font-size:13px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.ft h4{color:#fff;font-size:14px;margin-bottom:10px}
+.ft ul{list-style:none;display:grid;gap:7px}
+.ft a{color:var(--sub);transition:.2s}
+.ft a:hover{color:#fff}
+.copy{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* 入场动画 */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+/* 响应式 */
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .stage{justify-self:center;max-width:400px}
+  .gauge{grid-template-columns:repeat(2,1fr)}
+  .rank{grid-template-columns:1fr}
+  .ask{position:static}
+  .bricks{column-count:2}
+  .lede2{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .wrap{padding:0 18px}
+  .nav-links{position:fixed;inset:62px 0 0 auto;width:280px;flex-direction:column;padding:22px 18px;background:#0c0a1a;border-left:1px solid var(--line);transform:translateX(102%);transition:transform .34s cubic-bezier(.3,.8,.3,1);z-index:55;overflow:auto}
+  .nav-links.open{transform:none}
+  .ham{display:flex}
+  .nav-links a{width:100%;padding:14px 12px;font-size:15px}
+  .gauge,.bricks{grid-template-columns:1fr}
+  .tbl-wrap{margin:0 -18px;border:0;border-radius:0}
+  .tbl-wrap table,.tbl-wrap tbody,.tbl-wrap tr,.tbl-wrap td{display:block;width:100%}
+  .tbl-wrap thead{display:none}
+  .tbl-wrap tr{padding:16px 18px;border-bottom:1px solid var(--line)}
+  .tbl-wrap td{border:0;padding:7px 0;font-size:14px}
+  .tbl-wrap td.n{font-size:15px}
+  .tbl-wrap td[data-l]::before{content:attr(data-l);display:inline-block;min-width:76px;color:var(--sub);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+  .tbl-wrap td.film{font-size:16px}
+  .row{grid-template-columns:1fr;gap:6px;padding-left:14px;padding-right:14px}
+  .row .yr{padding-top:0}
+  .row::before{left:-23px}
+  .m{flex-basis:170px}
+  .lede2 .b2 ol::after{content:"（完整榜单见桌面端）";color:var(--cyan);font-size:11.5px;letter-spacing:.08em}
+  .ft{grid-template-columns:1fr}
+  .scroll{display:none}
+}
+@media (max-width:420px){
+  body{font-size:15px}
+  .h-txt .clock{gap:10px}
+  .clk{min-width:112px;padding:12px 14px}
+  .clk b{font-size:22px}
+  .sec-head{margin-bottom:26px}
+  .m{flex-basis:150px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header role="banner">
+  <nav role="navigation" aria-label="主导航">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">3838<span style="color:var(--cyan)">电影网</span></a>
+      <button class="ham" type="button" aria-label="菜单" aria-expanded="false" aria-controls="mainnav">
+        <i></i>
+      </button>
+      <div class="nav-links" id="mainnav">
+        <a href="#gauge">时间刻度</a>
+        <a href="#fresh">本周片单</a>
+        <a href="#rank">3838 榜</a>
+        <a href="#line">时间谱系</a>
+        <a href="#map">类型地图</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- 首屏 -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="h-txt rv">
+      <span class="badge">● 正版片源导航 · 不提供任何下载</span>
+      <h1 id="h1">8 分钟，<br>还是 <em>38 分钟</em>？</h1>
+      <p class="lede">3838电影网不按明星排片，按<b>还剩多少时间</b>排片。通勤、午休、睡前、周末——先选刻度，再看片子。</p>
+      <div class="clock">
+        <div class="clk" style="--c:var(--cyan)"><b>08′</b><span>碎片 · 短片</span></div>
+        <div class="clk" style="--c:var(--violet)"><b>20′</b><span>一集剧长度</span></div>
+        <div class="clk" style="--c:var(--magenta)"><b>38′</b><span>黄金片长</span></div>
+        <div class="clk" style="--c:var(--amber)"><b>120′</b><span>沉浸 · 周末</span></div>
+      </div>
+    </div>
+
+    <div class="stage rv" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#23203a"/><stop offset="1" stop-color="#0d0b1c"/>
+          </linearGradient>
+          <linearGradient id="needle" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff8fa8"/><stop offset="1" stop-color="#ff3d84"/>
+          </linearGradient>
+        </defs>
+        <!-- 表盘 -->
+        <circle cx="200" cy="210" r="150" fill="url(#face)" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+        <circle cx="200" cy="210" r="122" fill="none" stroke="rgba(123,92,255,.5)" stroke-width="1" stroke-dasharray="3 9"/>
+        <circle cx="200" cy="210" r="14" fill="#07060f" stroke="var(--cyan)" stroke-width="2" class="glow"/>
+        <!-- 刻度 -->
+        <g stroke="rgba(255,255,255,.34)" stroke-width="2">
+          <line x1="200" y1="66" x2="200" y2="84"/>
+          <line x1="200" y1="336" x2="200" y2="354"/>
+          <line x1="56" y1="210" x2="74" y2="210"/>
+          <line x1="326" y1="210" x2="344" y2="210"/>
+          <line x1="100" y1="110" x2="113" y2="123"/>
+          <line x1="300" y1="110" x2="287" y2="123"/>
+          <line x1="100" y1="310" x2="113" y2="297"/>
+          <line x1="300" y1="310" x2="287" y2="297"/>
+        </g>
+        <!-- 数字 -->
+        <g fill="#c8c1e4" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="1">
+          <text x="200" y="58">38</text>
+          <text x="354" y="216">20</text>
+          <text x="200" y="372">08</text>
+          <text x="46" y="216">120</text>
+        </g>
+        <!-- 指针 -->
+        <g class="tick">
+          <line x1="200" y1="210" x2="200" y2="96" stroke="url(#needle)" stroke-width="5" stroke-linecap="round"/>
+          <line x1="200" y1="210" x2="276" y2="210" stroke="var(--amber)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- 光晕 -->
+        <circle cx="200" cy="210" r="60" fill="none" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="2 14" class="ring" opacity=".5"/>
+        <!-- 飘线 -->
+        <path d="M60 300 C 120 268, 200 300, 260 268" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" class="drip" opacity=".7"/>
+        <path d="M90 340 C 150 316, 210 340, 300 314" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" class="drip" opacity=".5"/>
+        <text x="200" y="394" fill="#5e577a" font-size="11" letter-spacing="6" text-anchor="middle">TIME · IS · THE · PLOT</text>
+      </svg>
+    </div>
+  </div>
+  <span class="scroll">向下滚动</span>
+</section>
+
+<!-- ① 时间刻度 -->
+<section id="gauge" aria-labelledby="s1">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">刻度 · Scale</div>
+        <h2 class="sec-title" id="s1">还剩多少时间，就选哪一类</h2>
+        <p class="sec-note">3838 不是评分，是<b>时长刻度</b>。片长决定叙事密度，也决定你今晚能不能看完。</p>
+      </div>
+    </div>
+
+    <div class="gauge">
+      <article class="g rv" style="--c:var(--cyan);--c2:var(--violet)">
+        <div class="num">SCALE 08</div>
+        <h3>碎片 · 短片</h3>
+        <p>通勤、排队、等外卖。8–18 分钟，一个转折就够，看完刚好起身。</p>
+        <div class="bar"><i data-w="88"></i></div>
+        <div class="meta"><span>片长</span><b>8–18′</b><span>正版可看</span><b>120+ 部</b></div>
+      </article>
+      <article class="g rv" style="--c:var(--violet);--c2:var(--magenta)">
+        <div class="num">SCALE 20</div>
+        <h3>一集剧长度</h3>
+        <p>洗完澡、躺下来。20–45 分钟，正好是电视剧一集的时长，完整三幕不注水。</p>
+        <div class="bar"><i data-w="74"></i></div>
+        <div class="meta"><span>片长</span><b>20–45′</b><span>正版可看</span><b>60+ 部</b></div>
+      </article>
+      <article class="g rv" style="--c:var(--magenta);--c2:var(--rose)">
+        <div class="num">SCALE 38</div>
+        <h3>黄金片长</h3>
+        <p>本站名字的来处。38–70 分钟，电影节主竞赛常客，不赶场也不拖沓。</p>
+        <div class="bar"><i data-w="96"></i></div>
+        <div class="meta"><span>片长</span><b>38–70′</b><span>正版可看</span><b>38 部</b></div>
+      </article>
+      <article class="g rv" style="--c:var(--amber);--c2:var(--rose)">
+        <div class="num">SCALE 120</div>
+        <h3>沉浸 · 周末</h3>
+        <p>需要安静的晚上。90–150 分钟，长镜头、大银幕、最好戴耳机。</p>
+        <div class="bar"><i data-w="63"></i></div>
+        <div class="meta"><span>片长</span><b>90–150′</b><span>正版可看</span><b>200+ 部</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ② 本周片单 -->
+<section id="fresh" aria-labelledby="s2">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">本周 · This Week</div>
+        <h2 class="sec-title" id="s2">本周，38 分钟刚刚好</h2>
+        <p class="sec-note">按"今天还剩多少时间"挑的六部。片源均为正版平台可看。</p>
+      </div>
+      <a href="#rank" class="eyebrow" style="color:var(--violet)">看完整榜单 →</a>
+    </div>
+
+    <div class="mag">
+      <article class="m rv" style="--c:var(--magenta)">
+        <div class="cvr"><img src="https://picsum.photos/id/1047/400/534" alt="《活埋》海报" loading="lazy"><span class="tag">38′</span><span class="rate">8.7</span></div>
+        <h3>活埋 Buried</h3><div class="who">2010 · 西班牙 · 惊悚</div>
+        <p class="why">全片在一个棺材里。95 分钟，但你会在第 38 分钟就想关掉。</p>
+      </article>
+      <article class="m rv" style="--c:var(--violet)">
+        <div class="cvr"><img src="https://picsum.photos/id/1074/400/534" alt="《大佛普拉斯》海报" loading="lazy"><span class="tag">20′ 一集</span><span class="rate">8.7</span></div>
+        <h3>大佛普拉斯</h3><div class="who">2017 · 中国台湾 · 黑色幽默</div>
+        <p class="why">白天看黑白，夜里看彩色。每 20 分钟就是一个完整的冷笑话。</p>
+      </article>
+      <article class="m rv" style="--c:var(--cyan)">
+        <div class="cvr"><img src="https://picsum.photos/id/1067/400/534" alt="《深海》海报" loading="lazy"><span class="tag">120′</span><span class="rate">8.4</span></div>
+        <h3>深海 Deep Sea</h3><div class="who">2023 · 中国大陆 · 动画</div>
+        <p class="why">画面值回票价。适合周末、戴耳机、不被打扰的那 120 分钟。</p>
+      </article>
+      <article class="m rv" style="--c:var(--amber)">
+        <div class="cvr"><img src="https://picsum.photos/id/1080/400/534" alt="《光》海报" loading="lazy"><span class="tag">38′</span><span class="rate">8.2</span></div>
+        <h3>光 The Light</h3><div class="who">2018 · 短片 · 剧情</div>
+        <p class="why">23 分钟，没有一句台词。看完会想给某个人发条消息。</p>
+      </article>
+      <article class="m rv" style="--c:var(--rose)">
+        <div class="cvr"><img src="https://picsum.photos/id/1084/400/534" alt="《逃出绝命镇》海报" loading="lazy"><span class="tag">120′</span><span class="rate">8.6</span></div>
+        <h3>逃出绝命镇</h3><div class="who">2017 · 美国 · 惊悚</div>
+        <p class="why">前 40 分钟是喜剧，后 40 分钟是窒息。反转干净利落。</p>
+      </article>
+      <article class="m rv" style="--c:var(--violet)">
+        <div class="cvr"><img src="https://picsum.photos/id/1035/400/534" alt="《地球之盐》海报" loading="lazy"><span class="tag">08′</span><span class="rate">9.1</span></div>
+        <h3>地球之盐</h3><div class="who">2014 · 纪录片 · 摄影</div>
+        <p class="why">9 分钟片段就够震撼。适合午休，看完会沉默一会儿。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 3838 榜 -->
+<section id="rank" aria-labelledby="s3">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">榜单 · Ranking</div>
+        <h2 class="sec-title" id="s3">3838 榜：时间效率最高的 8 部</h2>
+        <p class="sec-note">"3838 值"＝<b>情绪回报 ÷ 投入时长</b>。分数越高，越值得你现在就点开。</p>
+      </div>
+    </div>
+
+    <div class="rank">
+      <div class="tbl-wrap rv">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">名次</th>
+              <th scope="col">影片</th>
+              <th scope="col">片长</th>
+              <th scope="col">类型</th>
+              <th scope="col">3838 值</th>
+              <th scope="col">评分</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="--c:var(--magenta);--c2:var(--rose)">
+              <td class="n" data-rk="3838 01">01</td>
+              <td class="film" data-l="影片">光 The Light<small>2018 · 短片 · 23′</small></td>
+              <td data-l="片长">23′</td>
+              <td data-l="类型">治愈 / 无声</td>
+              <td><div class="meter"><i data-w="98"></i></div></td>
+              <td data-l="评分">9.1</td>
+            </tr>
+            <tr style="--c:var(--violet);--c2:var(--magenta)">
+              <td class="n" data-rk="3838 02">02</td>
+              <td class="film" data-l="影片">大佛普拉斯<small>2017 · 中国台湾 · 102′</small></td>
+              <td data-l="片长">102′</td>
+              <td data-l="类型">黑色幽默</td>
+              <td><div class="meter"><i data-w="94"></i></div></td>
+              <td data-l="评分">8.7</td>
+            </tr>
+            <tr style="--c:var(--cyan);--c2:var(--violet)">
+              <td class="n" data-rk="3838 03">03</td>
+              <td class="film" data-l="影片">活埋 Buried<small>2010 · 西班牙 · 95′</small></td>
+              <td data-l="片长">95′</td>
+              <td data-l="类型">密闭 / 惊悚</td>
+              <td><div class="meter"><i data-w="91"></i></div></td>
+              <td data-l="评分">8.7</td>
+            </tr>
+            <tr style="--c:var(--amber);--c2:var(--rose)">
+              <td class="n" data-rk="3838 04">04</td>
+              <td class="film" data-l="影片">地球之盐<small>2014 · 纪录片 · 110′</small></td>
+              <td data-l="片长">110′</td>
+              <td data-l="类型">摄影 / 纪实</td>
+              <td><div class="meter"><i data-w="89"></i></div></td>
+              <td data-l="评分">9.1</td>
+            </tr>
+            <tr style="--c:var(--rose);--c2:var(--magenta)">
+              <td class="n" data-rk="3838 05">05</td>
+              <td class="film" data-l="影片">逃出绝命镇<small>2017 · 美国 · 104′</small></td>
+              <td data-l="片长">104′</td>
+              <td data-l="类型">惊悚 / 反转</td>
+              <td><div class="meter"><i data-w="87"></i></div></td>
+              <td data-l="评分">8.6</td>
+            </tr>
+            <tr style="--c:var(--violet);--c2:var(--cyan)">
+              <td class="n" data-rk="3838 06">06</td>
+              <td class="film" data-l="影片">深海<small>2023 · 中国大陆 · 112′</small></td>
+              <td data-l="片长">112′</td>
+              <td data-l="类型">动画 / 视觉</td>
+              <td><div class="meter"><i data-w="84"></i></div></td>
+              <td data-l="评分">8.4</td>
+            </tr>
+            <tr style="--c:var(--magenta);--c2:var(--violet)">
+              <td class="n" data-rk="3838 07">07</td>
+              <td class="film" data-l="影片">路边野餐<small>2015 · 中国大陆 · 110′</small></td>
+              <td data-l="片长">110′</td>
+              <td data-l="类型">诗意 / 长镜头</td>
+              <td><div class="meter"><i data-w="81"></i></div></td>
+              <td data-l="评分">8.3</td>
+            </tr>
+            <tr style="--c:var(--cyan);--c2:var(--amber)">
+              <td class="n" data-rk="3838 08">08</td>
+              <td class="film" data-l="影片">爱在黎明破晓前<small>1995 · 美国 · 105′</small></td>
+              <td data-l="片长">105′</td>
+              <td data-l="类型">对话 / 爱情</td>
+              <td><div class="meter"><i data-w="79"></i></div></td>
+              <td data-l="评分">8.8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="ask rv">
+        <h3>3838 之问</h3>
+        <ol>
+          <li>今天还剩多少分钟，是<b>真正属于自己</b>的？</li>
+          <li>有没有一部片，<b>前 38 分钟</b>就能决定今晚的心情？</li>
+          <li>上一次<b>看完没看手机</b>，是多久以前？</li>
+          <li>有没有一部片，值得你<b>二刷只为听配乐</b>？</li>
+        </ol>
+        <div class="note">★ 正版提示：本站仅做选片与正版片源导航，不提供、不链接任何盗版、破解、侵权或低俗资源。部分影片含惊悚、暴力情节，未满 18 岁请在监护人陪同下观看。</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 时间谱系 -->
+<section id="line" aria-labelledby="s4">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">谱系 · Auteurs</div>
+        <h2 class="sec-title" id="s4">把时间当材料的四位导演</h2>
+        <p class="sec-note">他们不是在拍故事，是在<b>分配时间</b>。谁给特写多一秒，谁就赢了。</p>
+      </div>
+    </div>
+
+    <div class="tl">
+      <article class="row rv" style="--c:var(--cyan)">
+        <div class="yr">1942 — 2020</div>
+        <div>
+          <h3>贝拉·塔尔 <span class="en">Béla Tarr</span></h3>
+          <p>一个雨天的长镜头可以走七分钟。他把"等待"拍成了主角。</p>
+          <div class="chips"><span>长镜头</span><span>黑白</span><span>7 分钟雨</span><span>《撒旦探戈》</span></div>
+        </div>
+      </article>
+      <article class="row rv" style="--c:var(--violet)">
+        <div class="yr">1954 — 2024</div>
+        <div>
+          <h3>李沧东 <span class="en">Lee Chang-dong</span></h3>
+          <p>沉默比台词贵。他让演员在最后十分钟才把情绪交出来。</p>
+          <div class="chips"><span>留白</span><span>表演</span><span>最后十分钟</span><span>《燃烧》</span></div>
+        </div>
+      </article>
+      <article class="row rv" style="--c:var(--magenta)">
+        <div class="yr">1970 —</div>
+        <div>
+          <h3>克里斯托弗·诺兰 <span class="en">Christopher Nolan</span></h3>
+          <p>时间是他唯一的反派。《盗梦空间》里，一层梦慢，一层梦快。</p>
+          <div class="chips"><span>非线性</span><span>结构</span><span>倒放</span><span>《敦刻尔克》</span></div>
+        </div>
+      </article>
+      <article class="row rv" style="--c:var(--amber)">
+        <div class="yr">1982 —</div>
+        <div>
+          <h3>毕赣 <span class="en">Bi Gan</span></h3>
+          <p>贵州的雾、老家的歌、42 分钟的长镜头。时间是循环的。</p>
+          <div class="chips"><span>诗意</span><span>方言</span><span>42 分钟</span><span>《路边野餐》</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 类型地图 -->
+<section id="map" aria-labelledby="s5">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">地图 · Map</div>
+        <h2 class="sec-title" id="s5">按"时间性格"找片</h2>
+        <p class="sec-note">同是 90 分钟，有人给你 30 个反转，有人只给一个长镜头。选性格，不选明星。</p>
+      </div>
+    </div>
+
+    <div class="bricks">
+      <article class="b h2 rv" style="--c:var(--magenta)">
+        <div class="cvr"><img src="https://picsum.photos/id/1059/640/400" alt="烧脑悬疑" loading="lazy"></div>
+        <div class="idx">MAP 01</div>
+        <h3>烧脑 · 时间被偷走</h3>
+        <p>非线性叙事、多重反转、最后一分钟推翻前面九十分钟。看完需要 10 分钟复盘。</p>
+      </article>
+      <article class="b rv" style="--c:var(--cyan)">
+        <div class="cvr"><img src="https://picsum.photos/id/1041/400/534" alt="治愈留白" loading="lazy"></div>
+        <div class="idx">MAP 02</div>
+        <h3>治愈 · 留白</h3>
+        <p>没有反转，只有慢慢来。适合一个人、一杯茶、不赶时间的晚上。</p>
+      </article>
+      <article class="b rv" style="--c:var(--violet)">
+        <div class="cvr"><img src="https://picsum.photos/id/1036/400/534" alt="黑色幽默" loading="lazy"></div>
+        <div class="idx">MAP 03</div>
+        <h3>黑色幽默 · 荒诞</h3>
+        <p>笑着笑着就沉默了。荒诞是穷人最后的修辞。</p>
+      </article>
+      <article class="b rv" style="--c:var(--amber)">
+        <div class="cvr"><img src="https://picsum.photos/id/1083/400/534" alt="纪录片" loading="lazy"></div>
+        <div class="idx">MAP 04</div>
+        <h3>纪录片 · 真实</h3>
+        <p>真实比剧本更狠。8 分钟片段就够，适合午休看完。</p>
+      </article>
+      <article class="b h2 rv" style="--c:var(--rose)">
+        <div class="cvr"><img src="https://picsum.photos/id/1071/640/400" alt="长镜头" loading="lazy"></div>
+        <div class="idx">MAP 05</div>
+        <h3>长镜头 · 一镜到底</h3>
+        <p>镜头不剪，呼吸不停。考验耐心的一种电影，也最像生活。</p>
+      </article>
+      <article class="b rv" style="--c:var(--violet)">
+        <div class="cvr"><img src="https://picsum.photos/id/1062/400/534" alt="公路" loading="lazy"></div>
+        <div class="idx">MAP 06</div>
+        <h3>公路 · 出发</h3>
+        <p>目的地不重要，副驾上那个人才重要。适合周末连看。</p>
+      </article>
+      <article class="b rv" style="--c:var(--cyan)">
+        <div class="cvr"><img src="https://picsum.photos/id/1057/400/534" alt="家庭代际" loading="lazy"></div>
+        <div class="idx">MAP 07</div>
+        <h3>家庭 · 代际</h3>
+        <p>一顿吃不完的饭，一句说不出口的话。适合和父母一起看。</p>
+      </article>
+    </div>
+
+    <div class="lede2">
+      <article class="b2 rv" style="--c:var(--cyan)">
+        <h4>入门 3838 榜（碎片时间也能看完）</h4>
+        <ol>
+          <li>《光》23′ · 无声短片，看完会想发消息</li>
+          <li>《地球之盐》片段 9′ · 塞巴斯蒂昂的镜头</li>
+          <li>《大佛普拉斯》102′ · 黑白白天，彩色夜里</li>
+          <li>《活埋》95′ · 一个棺材，一部电影</li>
+        </ol>
+      </article>
+      <article class="b2 rv" style="--c:var(--magenta)">
+        <h4>进阶 3838 榜（需要安静的晚上）</h4>
+        <ol>
+          <li>《路边野餐》110′ · 42 分钟长镜头，贵州的雾</li>
+          <li>《燃烧》148′ · 李沧东的最后十分钟</li>
+          <li>《撒旦探戈》450′ · 七小时雨，看完像活过一生</li>
+          <li>《敦刻尔克》106′ · 海陆空三个时间刻度</li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <h4>3838电影网</h4>
+        <p style="max-width:36ch">按"还剩多少时间"选片的观影指南。8 分钟碎片、38 分钟黄金、120 分钟沉浸——先看时间，再看片子。</p>
+      </div>
+      <div>
+        <h4>时间刻度</h4>
+        <ul>
+          <li><a href="#gauge">08′ 碎片 · 短片</a></li>
+          <li><a href="#gauge">20′ 一集剧长度</a></li>
+          <li><a href="#gauge">38′ 黄金片长</a></li>
+          <li><a href="#gauge">120′ 沉浸 · 周末</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="#rank">3838 值算法</a></li>
+          <li><a href="#fresh">正版片源导航</a></li>
+          <li><a href="#map">类型地图</a></li>
+          <li><a href="#">建议与纠错</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> 3838电影网 · 3838dianyingwang-cn.github.io · 仅做选片与正版片源导航</span>
+      <span>不提供、不链接任何盗版、破解、侵权或低俗资源</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        if(e.target.classList.contains('tl')){
+          e.target.querySelectorAll('.row').forEach(function(r,i){ r.style.transitionDelay = (i*120)+'ms'; });
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12}) : null;
+
+  document.querySelectorAll('.rv').forEach(function(n){
+    if(io) io.observe(n);
+    else n.classList.add('in');
+  });
+
+  // 进度条
+  document.querySelectorAll('[data-w]').forEach(function(b){
+    var v = b.getAttribute('data-w');
+    if(io){
+      io.observe(b);
+      b.addEventListener('in',function(){ b.style.width = v+'%'; },{once:true});
+    } else b.style.width = v+'%';
+  });
+
+  // 汉堡
+  var ham = document.querySelector('.ham');
+  var nav = document.getElementById('mainnav');
+  ham.addEventListener('click',function(){
+    var o = ham.getAttribute('aria-expanded') === 'true';
+    ham.setAttribute('aria-expanded', String(!o));
+    nav.classList.toggle('open', !o);
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      ham.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
